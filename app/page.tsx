@@ -16,9 +16,9 @@ export default function Home() {
   const images = imageUrls.map((imageUrl, index) => ({ id: index + 1, imageUrl }))
 
   return (
-    <main className="">
-      <h1>Space Gallery</h1>
-      <div className="flex flex-wrap gap-4 ml-2">
+    <main className="w-100 p-4">
+      <h1 className="font-semibold mb-2">Recent Uploaded</h1>
+      <div className="grid grid-cols-4 gap-4">
         {images.map((image, index) => (
           <div key={index}>
             <Image
@@ -26,6 +26,7 @@ export default function Home() {
               width={300}
               height={300}
               alt={`Image ${index + 1}`}
+              className="rounded"
             />
           </div>
         ))}
