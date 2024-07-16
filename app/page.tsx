@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 
 export default function Home() {
@@ -18,7 +20,7 @@ export default function Home() {
   return (
     <main className="w-100 p-4">
       <h1 className="font-semibold mb-2">Recent Uploaded</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         {images.map((image, index) => (
           <div key={index}>
             <Image
@@ -27,6 +29,7 @@ export default function Home() {
               height={300}
               alt={`Image ${index + 1}`}
               className="rounded"
+              onLoadStart={() => <p>Loading...</p>}
             />
           </div>
         ))}
